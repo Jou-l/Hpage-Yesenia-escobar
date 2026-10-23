@@ -1,0 +1,50 @@
+/* Book catalogue, newest first. Each entry feeds the books grid, the dropdown and the detail page. */
+
+const B=[
+ {title:"Anoche soñé con cocodrilos",slug:"anoche-sone-con-cocodrilos",label:"Poetry · 2025",genre:"Poetry",cover:"assets/img/books/anoche-sone-con-cocodrilos.jpg",fit:"contain",coverBg:"#08070d",
+  synopsis:"A poetry collection that places the figure of the woman at the axis of a bifurcation of time and space. Moving between Greco-Roman myth and the lived present, these poems revisit the distorted image of women handed down by patriarchal fables and answer with a gaze of their own — one that names poverty, hunger and the lack of access to power, and that turns memory, the oneiric, Afro-descendant ancestry and nature into a place from which to speak.",
+  quote:"In these poems ancestral echoes become a forceful voice that shapes the present and prepares us for the future: ‘we keep walking […] / no one can say our time was immovable.’",
+  quoteBy:"Nory Malugin",
+  facts:[["Publisher","Festival Internacional de Poesía en Puerto Rico (FIPPR)"],["Year","2025"],["Language","Spanish"],["Launch","15 March 2025 · Teatro Francisco Arriví, San Juan"]],
+  extra:{label:"Read the Announcement",url:"https://www.facebook.com/share/1Yoyky4zUF/"}},
+ {title:"¿Dónde estás, Masmelo?",slug:"donde-estas-masmelo",label:"Children's Book · 2019",genre:"Children's Book",cover:"assets/img/books/donde-estas-masmelo.jpg",fit:"contain",coverBg:"#0b1024",
+  synopsis:"Valentina comes home and cannot find her best friend, her cat Masmelo. Where could he be? As she imagines the adventures he might be having, she is led towards a farewell that children her age never expect — and towards the acceptance that life continues with the memory of those we love.",
+  facts:[["Publisher","Editorial Tagigo"],["Year","2019"],["Language","Spanish"],["Format","Illustrated children's book"]],
+  buy:"https://www.editorialtagigo.com/product-page/d%C3%B3nde-est%C3%A1s-masmelo"},
+ {title:"Ensueño negro del África mía",slug:"ensueno-negro-del-africa-mia",label:"Poetry · 2016",genre:"Poetry",cover:"assets/img/books/ensueno-negro-del-africa-mia.jpg",
+  synopsis:"A book of poems that celebrates the richness, history, ancestry and rhythm of Afro-Caribbean Colombian culture. Each poem portrays the identity of a Black woman proud of her roots — sometimes nostalgic, sometimes carried by the beat of the drum — and together they open a more diverse, polyphonic space in Colombian letters.",
+  facts:[["Publisher","Nostromo Ediciones / Fundación Carlos Arturo Truque"],["Year","2016"],["Language","Spanish"],["Current edition","Editorial Tagigo"]],
+  buy:"https://www.editorialtagigo.com/product-page/ensue%C3%B1o-negro-del-%C3%A1frica-m%C3%ADa"},
+ {title:"Mamá Avó",slug:"mama-avo",label:"Children's Book · 2014",genre:"Children's Book",cover:"assets/img/books/mama-avo.jpg",fit:"contain",coverBg:"#fbf5ec",
+  synopsis:"A little girl and her grandmother share a happy afternoon while the grandmother braids her hair and tells her stories of their African ancestors. Through songs and stories she passes on the greatness of her culture, and the word avó — grandmother in Portuguese — opens a link to the Palenquera roots of the language.",
+  facts:[["Publisher","Secretaría de Educación de Bogotá"],["Year","2014"],["Illustrations","Alexis Barroso Londoño"],["ISBN","978-958-8878-46-1"],["Language","Spanish"]],
+  pdf:"https://repositoriosed.educacionbogota.edu.co/bitstreams/08aa0e88-b57e-4b54-9b35-a2e7d9985c36/download"}
+];
+/* Instagram cards, newest first. img = image in assets/img/instagram,
+   src = account + date shown above the text, url = link to the original post. */
+const IG=[
+{ img:"assets/img/instagram/pensar-2026-08.jpg", src:"@pensar.africanamente · August 6, 2026", url:"https://www.instagram.com/p/DbtTHPikdll/",
+  alt:"Poster for the online talk Black Women in Movement: identity, belonging and diaspora experiences",
+  text:"Black Women in Movement — identity, belonging and diaspora experiences. I took part in this transnational conversation with Maria Drell and Betânia Schröder." },
+{ img:"assets/img/instagram/gracias-petro-2026-07.jpg", src:"@yesi_poeta · July 17, 2026", url:"https://www.instagram.com/p/Da6UjXxmRnM/",
+  alt:"Graphic with the smiling face of President Gustavo Petro and the words Gracias Petro",
+  text:"Thank you, President Gustavo Petro 🙏🏾✊🏾☺️" },
+{ img:"assets/img/instagram/africology-2026-06.jpg", src:"@yesi_poeta · June 27, 2026", url:"https://www.instagram.com/p/DaGDEWSEmRR/",
+  alt:"The book Africology and the African Diaspora, open at the contents page listing Yesenia Escobar Espitia's chapter",
+  text:"Every new publication hides an enormous amount of work behind it, and many possibilities for the future. Those of us who bet on education, culture, philosophy and art know that, amid the chaos and the despair, the only thing that can save us is to keep working for a better world. Ashé." },
+{ img:"assets/img/instagram/elecciones-2026-05.jpg", src:"@yesi_poeta · May 31, 2026", url:"https://www.instagram.com/p/DZAxRaxEpnK/",
+  alt:"Colombian electoral certificate for the 2026 presidential elections issued at the consulate in Philadelphia",
+  text:"We are in first place ✊🏾💪🏾❤️🇨🇴🥰" },
+{ img:"assets/img/instagram/escritoras-2026-04.jpg", src:"@antoniaporescrito · April 28, 2026", url:"https://www.instagram.com/p/DXrSDwdBmEI/",
+  alt:"Video frame from the Bogotá International Book Fair with the words Colombia tiene escritoras",
+  text:"\u201CColombia tiene escritoras.\u201D The opening of FIL Bogotá 2026 put twelve men and one woman on the panel; 231 women of Colombian literature signed a statement demanding real representation." },
+{ img:"assets/img/instagram/womb-2026-02.jpg", src:"@yesi_poeta · February 18, 2026", url:"https://www.instagram.com/p/DU6Wa3nElj5/",
+  alt:"Poster for the symposium (Un)Making the (Abyssal) Womb on Afro-Latina culture at the University of Pennsylvania",
+  text:"This Friday, in person or via Zoom — confirm your attendance." },
+{ img:"assets/img/instagram/esol-2026-02.jpg", src:"@yesi_poeta · February 10, 2026", url:"https://www.instagram.com/p/DUlzrTakk9V/",
+  alt:"The book Preparing Antiracist ESOL Professionals held up to a window",
+  text:"Finally in my hands: my second academic contribution in this country. Grateful to Nancy Carvajal Medina and Mariana Ramírez for the invitation, and to Luciana De Oliveira and Karen Terrel for accepting our chapter." },
+{ img:"assets/img/instagram/gumbo-2023-12.jpg", src:"@yesi_poeta · December 2, 2023", url:"https://www.instagram.com/p/C0X6uvUtZ5q/",
+  alt:"Graphic from Gumbo The Podcast with video tiles of Dr. Lindsay Gary, Dr. Marimer Berberena and Yesenia Escobar",
+  text:"Don\u2019t forget to listen to our conversation on Gumbo The Podcast. It was amazing to share it with Dr. Lindsay Gary and Dr. Marimer Berberena." }
+];

@@ -1,0 +1,36 @@
+/* Smoothness layer: easing, reveals, page transitions, micro-interactions */
+:root{--ease:cubic-bezier(.22,.8,.24,1)}
+.progress{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:4px;width:100%;transform:scaleX(0);transform-origin:0 50%;background:linear-gradient(90deg,var(--ochre),var(--terra),var(--green));z-index:40;will-change:transform}
+header{transition:box-shadow .35s var(--ease)}
+.bar{transition:height .35s var(--ease)}
+header.scrolled .bar{height:62px}
+header.scrolled{box-shadow:0 10px 26px #3b1f0f1f}
+.logo .bfly .wing{transition:transform .38s var(--ease);transform-box:fill-box}
+.logo .bfly .wing-l{transform-origin:100% 50%}
+.logo .bfly .wing-r{transform-origin:0% 50%}
+@media(hover:hover){.logo:hover .bfly .wing-l,.logo:hover .bfly .wing-r{transform:scaleX(.84)}}
+nav a{transition:color .25s,border-color .25s}
+.dd ul{display:flex;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .25s var(--ease),transform .25s var(--ease),visibility .25s}
+.dd:hover ul,.dd:focus-within ul{opacity:1;visibility:visible;transform:none}
+#app{transition:opacity .22s ease,transform .22s ease}
+#app.entering{animation:pageIn .6s var(--ease) both}
+@keyframes pageIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:var(--d,0ms);will-change:opacity,transform}
+.reveal.in{opacity:1;transform:none}
+.reveal.done{transition:transform .35s var(--ease),box-shadow .35s var(--ease),opacity .3s;transition-delay:0s;will-change:auto}
+.btn{position:relative;overflow:hidden;transition:background .3s var(--ease),color .3s,border-color .3s,transform .3s var(--ease),box-shadow .3s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 20px #b5663f40}
+.btn:active{transform:translateY(0) scale(.96);box-shadow:none;transition-duration:.1s}
+.ripple{position:absolute;border-radius:50%;background:#fff7;transform:scale(0);animation:rip .65s ease-out forwards;pointer-events:none}
+@keyframes rip{to{transform:scale(4);opacity:0}}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,[role="button"]:focus-visible{outline:3px solid var(--ochre);outline-offset:3px}
+.photo .pf{animation:float 7s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-8px)}}
+.photo::before{transition:transform .6s var(--ease)}.photo:hover::before{transform:translate(28px,24px)}
+.bk .cover{transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.bk:hover .cover{transform:translateY(-10px) rotate(-1.2deg);box-shadow:-10px 14px 0 var(--ochre),0 30px 50px #0004}
+.post.done:hover{transform:translateY(-6px);box-shadow:0 16px 30px #3b1f0f22}
+.post .img{transition:transform .6s var(--ease)}.post:hover .img{transform:scale(1.06)}
+.post{overflow:hidden}
+@media(max-width:860px){.dd ul{opacity:1;visibility:visible;transform:none}nav.show{animation:pageIn .3s var(--ease)}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
