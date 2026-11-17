@@ -7,7 +7,7 @@ const B=[
   quoteBy:"Nory Malugin",
   facts:[["Publisher","Festival Internacional de Poesía en Puerto Rico (FIPPR)"],["Year","2025"],["Language","Spanish"],["Launch","15 March 2025 · Teatro Francisco Arriví, San Juan"]],
   extra:{label:"Read the Announcement",url:"https://www.facebook.com/share/1Yoyky4zUF/"}},
- {title:"¿Dónde estás, Masmelo?",slug:"donde-estas-masmelo",label:"Children's Book · 2019",genre:"Children's Book",cover:"assets/img/books/donde-estas-masmelo.jpg",fit:"contain",coverBg:"#0b1024",
+ {title:"¿Dónde estás, Masmelo?",slug:"donde-estas-masmelo",label:"Children's Book · 2019",genre:"Children's Book",cover:"assets/img/books/donde-estas-masmelo.jpg",fit:"contain",coverBg:"linear-gradient(to bottom,#2e4280 0 15.5%,#90b793 84.5% 100%)",
   synopsis:"Valentina comes home and cannot find her best friend, her cat Masmelo. Where could he be? As she imagines the adventures he might be having, she is led towards a farewell that children her age never expect — and towards the acceptance that life continues with the memory of those we love.",
   facts:[["Publisher","Editorial Tagigo"],["Year","2019"],["Language","Spanish"],["Format","Illustrated children's book"]],
   buy:"https://www.editorialtagigo.com/product-page/d%C3%B3nde-est%C3%A1s-masmelo"},
@@ -15,7 +15,7 @@ const B=[
   synopsis:"A book of poems that celebrates the richness, history, ancestry and rhythm of Afro-Caribbean Colombian culture. Each poem portrays the identity of a Black woman proud of her roots — sometimes nostalgic, sometimes carried by the beat of the drum — and together they open a more diverse, polyphonic space in Colombian letters.",
   facts:[["Publisher","Nostromo Ediciones / Fundación Carlos Arturo Truque"],["Year","2016"],["Language","Spanish"],["Current edition","Editorial Tagigo"]],
   buy:"https://www.editorialtagigo.com/product-page/ensue%C3%B1o-negro-del-%C3%A1frica-m%C3%ADa"},
- {title:"Mamá Avó",slug:"mama-avo",label:"Children's Book · 2014",genre:"Children's Book",cover:"assets/img/books/mama-avo.jpg",fit:"contain",coverBg:"#fbf5ec",
+ {title:"Mamá Avó",slug:"mama-avo",label:"Children's Book · 2014",genre:"Children's Book",cover:"assets/img/books/mama-avo.jpg",fit:"contain",coverBg:"#ffffff",
   synopsis:"A little girl and her grandmother share a happy afternoon while the grandmother braids her hair and tells her stories of their African ancestors. Through songs and stories she passes on the greatness of her culture, and the word avó — grandmother in Portuguese — opens a link to the Palenquera roots of the language.",
   facts:[["Publisher","Secretaría de Educación de Bogotá"],["Year","2014"],["Illustrations","Alexis Barroso Londoño"],["ISBN","978-958-8878-46-1"],["Language","Spanish"]],
   pdf:"https://repositoriosed.educacionbogota.edu.co/bitstreams/08aa0e88-b57e-4b54-9b35-a2e7d9985c36/download"}
