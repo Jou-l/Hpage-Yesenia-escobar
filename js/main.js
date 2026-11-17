@@ -43,7 +43,7 @@ function renderBookDetail() {
     const pdf = book.pdf ? `<a class="btn solid" href="${book.pdf}" target="_blank" rel="noopener">Read the Free PDF</a>` : '';
     const extra = book.extra ? `<a class="btn" href="${book.extra.url}" target="_blank" rel="noopener">${book.extra.label}</a>` : '';
     const contact = !book.buy && !book.pdf ? '<a class="btn solid" href="contact.html">Contact</a>' : '';
-    detail.innerHTML = `<div class="book-cover-wrap">${cover(book, index)}</div><div><span class="badge">${book.label}</span><p>${book.synopsis}</p>${quote}<dl class="book-meta">${facts}</dl><div class="btns">${buy}${pdf}${extra}${contact}<a class="btn" href="books.html">More Books</a><a class="btn green" href="profiles.html">Professional Profiles</a></div></div>`;
+    detail.innerHTML = `<div class="book-cover-wrap">${cover(book, index)}</div><div><span class="badge">${book.label}</span><p>${book.synopsis}</p>${quote}<dl class="book-meta">${facts}</dl><div class="btns">${buy}${pdf}${extra}${contact}<a class="btn" href="books.html">More Books</a><a class="btn green" href="profiles.html">Background</a></div></div>`;
 }
 
 function renderInstagram() {
@@ -64,6 +64,30 @@ function enableContactForm() {
     });
 }
 
+function renderNews() {
+    const list = document.getElementById('news-list');
+    if (!list) return;
+    list.innerHTML = NEWS.map(item => {
+        const images = item.images.map(image => `<figure${image.fit ? ' class="fit"' : image.portrait ? ' class="portrait"' : ''}><img src="${image.src}" alt="${image.alt}" loading="lazy" decoding="async"></figure>`).join('');
+        const caption = item.caption ? `<p class="caption">${item.caption}</p>` : '';
+        return `<article class="news-item"><div class="news-body"><span class="kicker">${item.date}</span><h2>${item.title}</h2><p>${item.text}</p></div><div class="news-media"><div class="news-gallery${item.images.length > 1 ? ' multi' : ''}">${images}</div>${caption}</div></article>`;
+    }).join('');
+    Anim.scan(list);
+}
+
+function enableTabs() {
+    const tabs = Array.from(document.querySelectorAll('.tab'));
+    if (!tabs.length) return;
+    tabs.forEach(tab => tab.addEventListener('click', () => {
+        tabs.forEach(other => {
+            const on = other === tab;
+            other.classList.toggle('on', on);
+            other.setAttribute('aria-selected', String(on));
+            document.getElementById(other.dataset.tab).hidden = !on;
+        });
+    }));
+}
+
 const burger = document.getElementById('burger');
 const nav = document.getElementById('nav');
 if (burger && nav) {
@@ -76,5 +100,7 @@ if (burger && nav) {
 renderBookList();
 renderBookDetail();
 renderInstagram();
+renderNews();
+enableTabs();
 enableContactForm();
 Anim.enter(app);

@@ -9,3 +9,6 @@ desktop.ini
 
 # Temporales
 *.log
+
+# Material de referencia (no forma parte del sitio)
+assets/img/profiles/
