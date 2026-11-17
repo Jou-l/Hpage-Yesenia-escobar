@@ -70,7 +70,7 @@ function renderNews() {
     list.innerHTML = NEWS.map(item => {
         const images = item.images.map(image => `<figure${image.fit ? ' class="fit"' : image.portrait ? ' class="portrait"' : ''}><img src="${image.src}" alt="${image.alt}" loading="lazy" decoding="async"></figure>`).join('');
         const caption = item.caption ? `<p class="caption">${item.caption}</p>` : '';
-        return `<article class="news-item"><div class="news-body"><span class="kicker">${item.date}</span><h2>${item.title}</h2><p>${item.text}</p></div><div class="news-media"><div class="news-gallery${item.images.length > 1 ? ' multi' : ''}">${images}</div>${caption}</div></article>`;
+        return `<article class="news-item"><div class="news-body"><span class="kicker">${item.date}</span><h2>${item.title}</h2><p>${item.text}</p></div><div class="news-gallery n${item.images.length}">${images}</div>${caption}</article>`;
     }).join('');
     Anim.scan(list);
 }
