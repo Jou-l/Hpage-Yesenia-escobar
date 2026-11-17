@@ -6,9 +6,9 @@
 <meta name="description" content="Contact Yesenia Escobar Espitia for press, legal, teaching or speaking enquiries.">
 <title>Contact | Yesenia Escobar</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,800;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" href="assets/img/favicon.svg?v=12" type="image/svg+xml">
-<link rel="stylesheet" href="css/styles.css?v=12">
-<link rel="stylesheet" href="css/animations.css?v=12">
+<link rel="icon" href="assets/img/favicon.svg?v=13" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css?v=13">
+<link rel="stylesheet" href="css/animations.css?v=13">
 </head>
 <body data-page="contact">
 <div class="progress"></div>
@@ -26,11 +26,17 @@
 <section class="page-head"><div class="wrap"><h1>Contact</h1></div></section>
 <div class="wrap section two">
 <div><h2>Say hello</h2><p>For press, legal, teaching or speaking enquiries, please use the form below. I read every message and reply as soon as I can.</p><p><b>Email:</b> <a href="mailto:yescobarenglish@gmail.com">yescobarenglish@gmail.com</a></p></div>
-<!-- TODO Formspree: add action="https://formspree.io/f/XXXX" and method="POST" to the form, then remove the demo handler in js/main.js. -->
-<form id="f"><label>Name<input name="name" required></label><label>Email<input name="email" type="email" required></label><label>Message<textarea name="message" rows="6" required></textarea></label><div><button class="btn solid" type="submit">Send Message</button> <span class="ok" id="ok" role="status" aria-live="polite"></span></div></form>
+<form id="f" action="https://formspree.io/f/mnjrneob" method="POST">
+<input type="hidden" name="_subject" value="New message from the Yesenia Escobar website">
+<input type="hidden" name="_gotcha" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+<label>Name<input name="name" autocomplete="name" maxlength="100" required></label>
+<label>Email<input name="email" type="email" autocomplete="email" required></label>
+<label>Message<textarea name="message" rows="6" maxlength="5000" required></textarea></label>
+<div><button class="btn solid" type="submit">Send Message</button> <span class="ok" id="ok" role="status" aria-live="polite"></span></div>
+</form>
 </div>
 </main>
 <footer><div class="wrap"><span>© 2026 Yesenia Escobar. All rights reserved.</span><span>Author, poet and scholar based in Philadelphia.</span></div></footer>
-<script src="js/data.js?v=12"></script><script src="js/animations.js?v=12"></script><script src="js/main.js?v=12"></script>
+<script src="js/data.js?v=13"></script><script src="js/animations.js?v=13"></script><script src="js/main.js?v=13"></script>
 </body>
 </html>

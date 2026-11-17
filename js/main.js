@@ -56,11 +56,48 @@ function renderInstagram() {
 function enableContactForm() {
     const form = document.getElementById('f');
     if (!form) return;
-    // TODO Formspree: replace this demo handler with a POST to the form endpoint.
-    form.addEventListener('submit', event => {
+    const status = document.getElementById('ok');
+    const button = form.querySelector('button[type="submit"]');
+    const endpoint = form.getAttribute('action');
+    form.addEventListener('submit', async event => {
         event.preventDefault();
-        document.getElementById('ok').textContent = 'Thank you — message received (demo).';
-        form.reset();
+        if (!endpoint) {
+            status.textContent = 'The form is not configured yet. Please email yescobarenglish@gmail.com.';
+            status.classList.add('error');
+            return;
+        }
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = 'Sending…';
+        status.textContent = '';
+        status.classList.remove('error');
+        try {
+            const response = await fetch(endpoint, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { Accept: 'application/json' }
+            });
+            if (response.ok) {
+                form.reset();
+                status.textContent = 'Thank you — your message has been sent.';
+            } else {
+                let message = 'Something went wrong. Please try again or email yescobarenglish@gmail.com.';
+                try {
+                    const data = await response.json();
+                    if (data && Array.isArray(data.errors) && data.errors.length) {
+                        message = data.errors.map(error => error.message).join(' ');
+                    }
+                } catch (error) {}
+                status.textContent = message;
+                status.classList.add('error');
+            }
+        } catch (error) {
+            status.textContent = 'Network error. Please try again or email yescobarenglish@gmail.com.';
+            status.classList.add('error');
+        } finally {
+            button.disabled = false;
+            button.textContent = original;
+        }
     });
 }
 

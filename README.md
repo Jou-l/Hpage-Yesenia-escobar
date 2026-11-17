@@ -34,13 +34,13 @@ The catalogue lives in the `B` list at the top of `js/data.js`. Each entry is an
 
 - `cover` points to `assets/img/books/…`. If omitted, the CSS-generated cover is used.
 - `fit:"contain"` letterboxes square covers inside the 2:3 frame; omit it for a regular 2:3 cover.
-- `coverBg` is the letterbox colour used with `fit:"contain"` (for example, cream for a light cover).
+- `coverBg` is the letterbox fill used with `fit:"contain"`; it can be a colour or a gradient sampled from the cover edges.
 - `facts` is a list of `[label, value]` pairs shown on the detail page.
 - `buy`, `pdf` and `extra` are optional external links.
 
 ## Contact and newsletter
 - `contact.html` shows the professional address `yescobarenglish@gmail.com`.
-- The contact form is a demo. To activate it, create a Formspree form, add `action="https://formspree.io/f/…"` and `method="POST"` to `<form id="f">`, and remove the demo handler in `js/main.js`.
+- The contact form submits to Formspree (`https://formspree.io/f/mnjrneob`) via AJAX, with a native POST fallback when JavaScript is off. Submissions are delivered to the target email configured in the Formspree account.
 - A newsletter subscription is not implemented yet.
 
 ## Instagram cards
