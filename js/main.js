@@ -68,9 +68,13 @@ function renderNews() {
     const list = document.getElementById('news-list');
     if (!list) return;
     list.innerHTML = NEWS.map(item => {
-        const images = item.images.map(image => `<figure${image.fit ? ' class="fit"' : image.portrait ? ' class="portrait"' : ''}><img src="${image.src}" alt="${image.alt}" loading="lazy" decoding="async"></figure>`).join('');
+        const images = item.images.map(image => {
+            const cls = [image.fit ? 'fit' : '', image.portrait ? 'portrait' : '', image.natural ? 'natural' : ''].filter(Boolean).join(' ');
+            return `<figure${cls ? ` class="${cls}"` : ''}><img src="${image.src}" alt="${image.alt}" loading="lazy" decoding="async"></figure>`;
+        }).join('');
+        const matched = item.images.some(image => image.natural);
         const caption = item.caption ? `<p class="caption">${item.caption}</p>` : '';
-        return `<article class="news-item"><div class="news-body"><span class="kicker">${item.date}</span><h2>${item.title}</h2><p>${item.text}</p></div><div class="news-gallery n${item.images.length}">${images}</div>${caption}</article>`;
+        return `<article class="news-item"><div class="news-body"><span class="kicker">${item.date}</span><h2>${item.title}</h2><p>${item.text}</p></div><div class="news-gallery n${item.images.length}${matched ? ' matched' : ''}">${images}</div>${caption}</article>`;
     }).join('');
     Anim.scan(list);
 }

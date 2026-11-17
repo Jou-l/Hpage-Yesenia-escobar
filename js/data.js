@@ -66,7 +66,7 @@ const NEWS=[
   caption:"Launch of the book Africology and the African Diaspora, edited by Dr. Molefi Kete Asante during the First Global Afrocentricity Conference, Philadelphia, PA, May 2026." },
 { date:"April 6, 2026", title:"Talk at Bryn Mawr College",
   text:"Invited by the Department of Spanish at Bryn Mawr College, Yesenia gave a talk on cimarronaje and affect in Afro-Latin American literature, followed by a reading of her own poetry.",
-  images:[{ src:"assets/img/events/bryn-mawr-poster-2026-04-tile.webp", alt:"Poster announcing Yesenia Escobar's talk at Bryn Mawr College" },
+  images:[{ src:"assets/img/events/bryn-mawr-poster-2026-04-tile.webp", natural:true, alt:"Poster announcing Yesenia Escobar's talk at Bryn Mawr College" },
           { src:"assets/img/events/bryn-mawr-talk-2026-04.webp", portrait:true, alt:"Yesenia Escobar presenting in a Bryn Mawr College classroom" }],
   caption:"Talk “Cimarronaje y afecto: Ancestralidad en la literatura afrolatinoamericana,” Bryn Mawr College, April 6, 2026." },
 { date:"April 2026", title:"Borders, Belonging, and the African Diaspora",
